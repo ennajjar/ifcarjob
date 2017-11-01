@@ -20,3 +20,122 @@
 	@mixin border-radius($val...) {
 	  @include prefix(border-radius, $val);
 	}
+
+/* Alignement Mixin */
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/* Convert PX to REM Values */
+@mixin rem($property, $px-values) {
+  $baseline-px : 16px;
+  $baseline-rem: $baseline-px / 1rem * 1;
+  @if type-of($px-values) == "number" {
+    #{$property}: $px-values / $baseline-rem; 
+    }
+  @else {
+    $rem-values: ();
+    @each $value in $px-values {
+      @if $value == 0 or type-of( $value ) != "number" {
+        $rem-values: append($rem-values, $value); 
+        }
+      @else {
+        $rem-values: append($rem-values, $value / $baseline-rem); 
+        } 
+    }
+    #{$property}: $rem-values; 
+  } 
+}
+
+/* Calculation Percentage Mixin */
+@function calc-percent($target, $container) {
+  @return ($target * 100%) / $container;
+}
+
+/* width and height mixin */
+@mixin size($width, $height :auto){
+  width: $width;
+  height: $height;
+}
+
+/* Break Points Mixin */
+@mixin breakpoint($point) {
+  @if $point == desktop {
+     @media only screen 
+    and (min-device-width: 1281px) 
+    and (max-device-width: 1700px)
+    and (-webkit-min-device-pixel-ratio: 1){ @content; }
+  }
+  @else if $point == tab {
+    @media only screen 
+    and (min-device-width: 800px) 
+    and (max-device-width: 1280px){ @content; }
+  }
+  @else if $point == bet {
+    @media only screen 
+    and (min-device-width: 640px) 
+    and (max-device-width: 799px){ @content; }
+  }
+  @else if $point == mobile {
+    @media only screen 
+    and (min-device-width: 300px) 
+    and (max-device-width: 639px)
+    and (-webkit-min-device-pixel-ratio: 2){ @content; }
+  }
+}
+
+/* Clearfix mixin  */
+@mixin clear() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+ 
+/* Opacity Mixin */
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+/* absolute position */
+@mixin absolute
+($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: absolute;
+}
+/* font-family Mixin */
+@mixin ff($Value){
+  font-family: $Value;
+}
+
+/* scrollBar customize Mixin */
+@mixin scroll($width, $height, $foreground-color, $background-color) {
+  ::-webkit-scrollbar {
+      width:  $width;
+      height: $height;
+  }
+  ::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+  }
+  ::-webkit-scrollbar-track {
+      background: $background-color;
+  }
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
