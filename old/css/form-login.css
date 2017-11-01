@@ -1,0 +1,98 @@
+.form-signin {
+
+  display:block;
+  background-color: #ffffff;
+-moz-box-shadow: 0px 1px 9px 0px #CCCCCC;
+-webkit-box-shadow: 0px 1px 9px 0px #CCCCCC;
+-o-box-shadow: 0px 1px 9px 0px #CCCCCC;
+box-shadow: 0px 1px 9px 0px #CCCCCC;
+filter:progid:DXImageTransform.Microsoft.Shadow(color=#CCCCCC, Direction=180, Strength=9);
+border-radius: 1px;
+}
+.main-form{
+	padding: 0 20px 20px 20px;
+}
+.main-form-register{
+  padding: 24px;
+}
+.main-form-register > .row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.social-box{
+  margin: 0 auto;
+  padding: 30px 20px 30px 20px;
+  border-bottom:1px #ccc solid;
+}
+.btn-social > i  {
+  top: 5px !important;
+}
+.heading-desc{
+	font-size:22pt;
+	font-weight:bold;
+	padding:38px 38px 0px 38px;
+	
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-top: 0;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+// .form-signin .form-control {
+//   position: relative;
+//   font-size: 16px;
+//   height: 20px;
+//   padding: 20px;
+//   -webkit-box-sizing: border-box;
+//      -moz-box-sizing: border-box;
+//           box-sizing: border-box;
+// }
+
+.login-footer{
+	margin: 0 auto;
+	padding:20px;
+  text-align: center;
+}
+
+.left-section a{
+	color:#52bde8;
+	line-height:19px;
+}
+
+.mg-social { margin-top:5px; margin-bottom: 6px; }
+ {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+.form-control,
+.omb_forgotPwd, 
+.checkbox, 
+.form-control{ color: #8f8f8f}
+.omb_loginOr {
+  text-align: center;
+  position: relative;
+  font-size: 1.5em;
+  color: #b3ca31;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+.omb_loginOr .omb_hrOr {
+  background-color: #b3ca31;
+  height: 1px;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+.omb_loginOr .omb_spanOr {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: -0.6em;
+  margin-left: -1.5em;
+  background-color: white;
+  width: 3em;
+  text-align: center;
+}
